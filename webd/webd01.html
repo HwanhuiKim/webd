@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 A-1</title>
+    <style> /*CSS*/
+        *{
+            margin: 0; /*마진, 패딩 초기화*/
+            padding: 0;
+        }
+        #wrap{ /*CSS에서 아이디는 #으로 표시*/
+            width: 1200px;
+            margin: 0 auto; /*가운데정렬: 위아래는 0, 좌우에 auto*/
+        }
+        #header { /*자식에 높이값이 있으면 상위에는 높이값을 안적어줘도 됨*/
+            width: 100%; /*부모(#wrap)의 100%라는 뜻. 즉 1200px로 동일*/
+            display: flex; /*박스가 위아래로 싸이지 않도록*/
+        }
+        #header .logo{
+            width: 20%;
+            height: 100px;
+            background-color: #efefef;
+        }
+        #header .nav {
+            width: 80%;
+            height: 100px;
+            background-color: #e3e3e3;
+        }
+        #slider {
+            width: 100%;
+            height: 300px;
+            background-color: #d9d9d9;
+        }
+        #contents {
+            width: 100%;
+            display: flex;
+        }
+        #contents .content1{
+            width: 33.3333%; /*0.00001%는 눈으로 구별불가함*/
+            height: 200px;
+            background-color: #d1d1d1;
+        }
+        #contents .content2{
+            width: 33.3333%;
+            height: 200px;
+            background-color: #c7c7c7;
+        }
+        #contents .content3{
+            width: 33.3333%;
+            height: 200px;
+            background-color: #bcbcbc;
+        }
+        #footer {
+            width: 100%;
+            display: flex;
+        }
+        #footer .footer1 {
+            width: 20%;
+            height: 100px;
+            background-color: #b1b1b1;
+        }
+        #footer .footer2 {
+            width: 60%;
+            height: 100px;
+            background-color: #a3a3a3;
+        }
+        #footer .footer3 {
+            width: 20%;
+            height: 100px;
+            background-color: #9d9d9d;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap"> <!--전체박스-->
+        <div id="header"> 
+            <div class="logo"></div>
+            <div class="nav"></div>
+        </div>
+        <!-- //header-->
+
+        <div id="slider">
+        </div>
+        <!-- //slider: 이미지 슬라이드-->
+
+        <div id="contents">
+            <div class = "content1"></div>
+            <div class = "content2"></div>
+            <div class = "content3"></div>
+        </div>
+        <!-- //contetns: 공지사항, 배너, 바로가기-->
+
+        <div id="footer">
+            <div class = "footer1"></div>
+            <div class = "footer2"></div>
+            <div class = "footer3"></div>
+        </div>
+        <!-- //footer-->
+    </div>
+</body>
+</html>
