@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 D-2</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #wrap{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        #aside{
+            width: 200px;
+        }
+        #aside .logo{
+            width: 200px;
+            height: 150px;
+            background-color: #e8e8e8;
+        }
+        #aside .nav{
+            width: 200px;
+            height: 500px;
+            background-color: #bfbfbf;
+        }
+        #main{
+            width: calc(100% - 200px);
+            height: 650px;
+        }
+        #slider{
+            width: 100%;
+            display: flex;
+        }
+        #slider .slider1{
+            width: calc(100% - 230px);
+            height: 400px;
+            background-color: #a5a5a5;
+        }
+        #slider .slider2{
+            width: 230px;
+            height: 400px;
+            background-color: #ffdddd;
+        }
+        #contents{
+            width: 100%;
+            display: flex;
+        }
+        #contents .content1{
+            width: 50%;
+            height: 250px;
+            background-color: #898989;
+        }
+        #contents .content2{
+            width: 50%;
+            height: 250px;
+            background-color: #717171;
+        }
+        #footer{
+            width: 100%;
+            display: flex;
+        }
+        #footer .footer1{
+            width: 20%;
+            height: 100px;
+            background-color: #f3ffe8;
+        }
+        #footer .footer2{
+            width: 60%;
+            height: 100px;
+            background-color: #ecffdb;
+        }
+        #footer .footer3{
+            width: 20%;
+            height: 100px;
+            background-color: #d9ffb6;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <aside id = "aside">
+            <h1 class = "logo"></h1>
+            <nav class = "nav"></nav>
+        </aside>
+        <!-- //aside-->
+
+        <main id = "main">
+            <article id = "slider">
+                <section class = "slider1"></section>
+                <section class = "slider2"></section>
+            </article>
+             <!-- //slider-->
+
+            <section id = "contents">
+                <div class = "content1"></div>
+                <div class = "content2"></div>
+            </section>
+             <!-- //contents-->
+
+        </main>
+         <!-- //main-->
+
+        <footer id ="footer">
+            <div class = "footer1"></div>
+            <div class = "footer2"></div>
+            <div class = "footer3"></div>
+        </footer>
+         <!-- //footer-->
+    </div>    
+</body>
+</html>

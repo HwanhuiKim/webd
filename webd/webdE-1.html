@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 레이아웃 E-1</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        #wrap{
+            width: 100%;
+        }
+        #main{
+            width: 100%;
+            height: calc(100vh - 120px); /*vh는 화면크기에 다르게 꽉 채워줌. height는 %를 쓸 수 없음*/
+            display: flex;
+        }
+        #header{
+            width: 200px;
+            height: 100%;
+        }
+        #header .logo{
+            width: 100%;
+            height: 10%;
+            background-color: #ededed;
+        }
+        #header .nav{
+            width: 100%;
+            height: 90%;
+            background-color: #d5d5d5;
+        }
+        #contents{
+            width: 400px;
+            height: 100%;
+        }
+        #contents .banner{
+            width: 100%;
+            height: 15%;
+            background-color: #afafaf;
+        }
+        #contents .notice{
+            width: 100%;
+            height: 35%;
+            background-color: #fadeff;
+        }
+        #contents .gallery{
+            width: 100%;
+            height: 35%;
+            background-color: #f7e6ff;
+        }
+        #contents .link{
+            width: 100%;
+            height: 15%;
+            background-color: #ffdbf6;
+        }
+
+        #slider{
+            width: calc(100% - 600px);
+            height: 100%;
+            background-color: #e8e8e8;
+        }
+        #footer{
+            width: 100%;
+            display: flex;
+        }
+        #footer .footer1{
+            width: 10%;
+            height: 120px;
+            background-color: #e1e1e1;
+        }
+        #footer .footer2{
+            width: 90%;
+        }
+        #footer .footer2 .footer2_1{
+            width: 100%;
+            height: 60px;
+            background-color: #71faff;
+        }
+        #footer .footer2 .footer2_2{
+            width: 100%;
+            height: 60px;
+            background-color: #a0fcff;
+        }
+
+    </style>
+</head>
+<body>
+    <div id ="wrap">
+        <main id = "main">
+            <header id = "header">
+                <h1 class ="logo"></h1>
+                <nav class = "nav"></nav>
+            </header>
+            <!-- //header-->
+
+            <section id ="contents">
+                <article class = "banner"></article>
+                <article class = "notice"></article>
+                <article class = "gallery"></article>
+                <article class = "link"></article>
+            </section>
+            <!-- //contents-->
+
+            <article id = "slider"></article>
+            <!-- //slider-->
+        </main>
+        <!-- //main-->
+
+        <footer id = "footer">
+            <div class = "footer1"></div>
+            <div class = "footer2">
+                <div class="footer2_1"></div>
+                <div class="footer2_2"></div>
+            </div>
+        </footer>
+        <!-- //footer-->
+    </div>
+</body>
+</html>
