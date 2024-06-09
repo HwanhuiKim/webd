@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹디자인기능사 슬라이드 S-1 페이드효과</title>
+    <style>
+     * {
+        margin: 0;
+        padding: 0;
+    }
+    #wrap {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    #header {
+        width: 100%;
+        display: flex;
+    }
+    #header .logo {
+        width: 20%;
+        height: 100px;
+        background-color: #efefef;
+    }
+    #header .nav {
+        width: 80%;
+        height: 100px;
+        background-color: #e3e3e3;
+    }
+    #slider {
+        width: 100%;
+        height: 300px;
+        background-color: #d9d9d9;
+    }
+    #contents {
+        width: 100%;
+        display: flex;
+    }
+    #contents .content1 {
+        width: 33.3333%;
+        height: 200px;
+        background-color: #d1d1d1;
+    }
+    #contents .content2 {
+        width: 33.3333%;
+        height: 200px;
+        background-color: #c7c7c7;
+    }
+    #contents .content3 {
+        width: 33.3333%;
+        height: 200px;
+        background-color: #bcbcbc;
+    }
+    #footer {
+        width: 100%;
+        display: flex;
+    }
+    #footer .footer1 {
+        width: 20%;
+        height: 100px;
+        background-color: #b1b1b1;
+    }
+    #footer .footer2 {
+        width: 60%;
+        height: 100px;
+        background-color: #a3a3a3;
+    }
+    #footer .footer3 {
+        width: 20%;
+        height: 100px;
+        background-color: #9d9d9d;
+    }
+    /* slider */
+    .sliderWrap{
+        position: relative;
+    }
+    .sliderWrap > div {
+        display: none;
+    }
+    .sliderWrap > div:first-child {
+        display: block; /*첫번째 이미지만 보이도록 하고 움직이는 건 script에서*/
+    }
+
+    .sliderWrap .slider{
+        position: absolute;
+        left: 0; top:0;
+    }
+    .sliderWrap .slider img{ /*img에는 항상 보지이지않는 여백이 생김.습관처럼!*/
+        vertical-align: top;
+    }
+    .sliderWrap .slider span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%); /*x축, y축으로으로 절반만큼 움직임. span이 그림의 가운데로 오도록*/
+      background-color: rgba(0,0,0,0.4);
+      padding: 10px 20px;
+      color: #fff;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1 class="logo"></h1>
+            <nav class="nav"></nav>
+        </header>
+        <!-- //header -->
+
+        <article id="slider">
+            <div class = "sliderWrap"> <!--움직이는 부분-->
+                <div class="slider s1">
+                    <!--alt는 이미지가 없을 때 나오는 대체 문자.　꼭 써줘야함!-->
+                    <img src="slider01.jpg" alt="이미지 설명">
+                    <span>이미지1</span>
+                </div>
+                <div class="slider s2">
+                    <img src="slider02.jpg" alt="이미지 설명">
+                    <span>이미지2</span>
+                </div>
+                <div class="slider s3">
+                    <img src="slider03.jpg" alt="이미지 설명">
+                    <span>이미지3</span>
+                </div>
+            </div>
+        </article>
+        <!-- //slider -->
+
+        <main id="contents">
+            <section class="content1"></section>
+            <section class="content2"></section>
+            <section class="content3"></section>
+        </main>
+        <!-- //contents -->
+
+        <footer id="footer">
+            <div class="footer1"></div>
+            <div class="footer2"></div>
+            <div class="footer3"></div>
+        </footer>
+        <!-- //footer -->
+    </div>
+    <!-- //wrap -->
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    $(function(){
+        let currentIndex = 0; //지금 보고있는 이미지는 0으로 변수 저장 //0 1 2 ...
+
+        setInterval(function(){//함수를 일정한 간격(3초)으로 실행시켜주는 것
+            let nextIndex = (currentIndex + 1) % 3; //1 2 0 1 2 ... 무한반복
+
+            $(".slider").eq(currentIndex).fadeOut(); //0 1 2 0 1 2 .. 기존 이미지 사라짐
+            $(".slider").eq(nextIndex).fadeIn();  //1 2 0 1 2.. 다음 이미지 나타남
+
+            //currentIndex++; 이렇게 말고
+            currentIndex = nextIndex; //두번째 인덱스 값을 첫번째에 저장.
+
+        }, 3000);
+    });
+</script>
+
+</html>
