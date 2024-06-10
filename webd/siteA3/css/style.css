@@ -1,0 +1,318 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    padding:0;
+    margin:0;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+    width: 100%;
+}
+
+/* wrap */
+#wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* header */
+#header{
+    width: 100%;
+    display: flex;
+    background: #f8fdff;
+}
+#header .logo{
+    width: 20%;
+    height: 100px;
+}
+
+#header .logo a{
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 30px 30px;
+}
+#header .nav{
+    width: 80%;
+    height: 100px;
+    position: relative; /*서브메뉴에 z-index쓰기위해 작성*/
+}
+
+/*nav*/
+#header .nav > ul {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 100%;
+}
+#header .nav > ul > li {
+    position: relative;
+}
+#header .nav > ul > li > a {
+    background: #d7f4ff;
+    padding: 10px 45px;
+    display: block;
+}
+#header .nav > ul > li > a:hover {
+    background: #94a9b0;
+    color: white;
+}
+#header .nav > ul > li > ul {
+    display: none;
+    position: absolute;
+    width: 100%;
+    z-index: 1000; /*position이랑 같이 써야함!!!*/
+}
+#header .nav > ul > li > ul >li > a{
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+#header .nav > ul > li > ul >li > a:hover {
+    background: #bbd3dc;
+}
+
+
+/* slide */
+#slide{
+    width: 100%;
+    height: 300px;
+}
+#slide .slideWrap {
+    position: relative;
+}
+#slide .slideWrap .slide {
+    position: absolute;
+
+}
+#slide .slideWrap .slide .text{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+    padding: 20px 30px;
+    
+}
+#slide .slideWrap .slide .text h2{
+    color: rgb(255, 255, 255);
+    font-size: 26px;
+}
+#slide .slideWrap .slide .text p{
+    color: rgb(210, 210, 210);
+    font-size: 15px;
+    margin-top: 7px;
+}
+
+/* contents */
+#contents{
+    width: 100%;
+    display: flex;
+}
+
+/* contents .info */
+#contents .info{
+    width: 33.3333%;
+    height: 200px;
+    background: #e6efff;
+    padding: 20px;
+    box-sizing: border-box; /*패딩값 제외해줌*/
+}
+#contents .info .info-menu {
+    margin-bottom: 10px;
+}
+#contents .info .info-menu a {
+    font-size: 18px;
+}
+#contents .info .info-menu a.active{
+    text-decoration: underline;
+}
+#contents .info .info-cont .notice{
+    display: none;
+}
+#contents .info .info-cont .notice > ul >li {
+    display: flex;
+}
+#contents .info .info-cont .notice > ul >li > a{
+    width: 75%;
+    font-size: 15px;
+    line-height: 1.8;
+}
+#contents .info .info-cont .notice > ul >li > a:hover{
+    text-decoration: underline;
+}
+#contents .info .info-cont .notice > ul >li > span{
+    width: 25%;
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: right;
+}
+#contents .info .info-cont .gallery{
+    /*display: none;*/
+}
+#contents .info .info-cont .gallery > ul{
+    display: flex;
+}
+#contents .info .info-cont .gallery > ul > li{
+    padding : 8px;
+}
+#contents .info .info-cont .gallery > ul > li > a{
+    display: block;
+    border: 2px solid transparent; /*안주면 위치가 움직임!*/
+}
+#contents .info .info-cont .gallery > ul > li > a:hover{
+    border: 2px solid  #150f3e;
+}
+
+/* contents .banner */
+#contents .banner{
+    width: 33.3333%;
+    height: 200px;
+    background-image: url(../images/banner.jpg);
+    display: flex;
+    align-items: center; /*aic*/
+    justify-content: center;/*jcc 외우기!!!*/
+    flex-direction: column;
+}
+
+#contents .banner h3{
+    color: #ffffff;
+    font-size: 22px;
+}
+#contents .banner a{
+    font-size: 18px;
+    margin-top: 7px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #36303092;
+    padding: 8px 15px;
+    border-radius: 50px;
+}
+#contents .banner a:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff9e;
+}
+
+/* contents .link */
+#contents .link{
+    width: 33.3333%;
+    height: 200px;
+    background-image: url(../images/link.jpg);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+#contents .link h3{
+    color: #ffffff;
+    font-size: 22px;
+}
+#contents .link a{
+    font-size: 18px;
+    margin-top: 7px;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #36303092;
+    padding: 8px 15px;
+    border-radius: 50px;
+}
+#contents .link a:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff9e;
+}
+
+/* footer */
+#footer {
+    width: 100%;
+    display: flex;
+    background: #ececec;
+}
+#footer .footer1{
+    width: 20%;
+    height: 100px;
+}
+#footer .footer1 h4{
+    display: block;
+    font-size: 25px;
+    color:#565656;
+    padding: 35px 35px;
+
+}
+#footer .footer2{
+    width: 80%;
+    height: 100px;
+}
+#footer .footer2 .footer2-1{
+    text-align: center;
+    width: 100%;
+    height: 50px;
+}
+#footer .footer2 .footer2-1 > ul > li{
+    display: inline-block;
+    margin-top: 20px;
+    border-right: 1px solid #333;
+}
+#footer .footer2 .footer2-1 > ul > li:last-child{
+    border-right: 0;
+}
+#footer .footer2 .footer2-1 > ul > li >a{
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+#footer .footer2 .footer2-1 > ul > li >a:hover{
+    text-decoration: underline;
+}
+
+#footer .footer2 .footer2-2{
+    font-size: 14px;
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    margin-top: 13px;
+}
+
+/* popup */
+
+#wrap{
+    position: relative;
+}
+.popup-view{
+    position: absolute;
+    left: 50%; top:50%;
+    transform: translate(-50%, -50%);
+    width:300px;
+    height: 300px;
+    background-color: #dbdbdb;
+    border: 2px solid #150f3e;
+    padding: 20px;
+    display: none;
+
+}
+
+.popup-view h3{
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #150f3e;
+    padding-bottom: 5px;
+}
+
+.popup-view .popup-close{
+    position: absolute;
+    left: 50%; bottom: 20px;
+    transform: translateX(-50%);
+    background-color: #757575bb;
+    color: white;
+    padding: 7px 9px;
+}
